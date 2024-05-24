@@ -15,7 +15,7 @@ async function requireAuth(req, res, next) {
     if(Date.now()  > decoded.exp) return res.sendStatus(401);
 
     // Find user using decoded  sub ...
-    const user =await User.findnyId(decoded.sub);
+    const user =await User.findbyId(decoded.sub);
 
     if(!user) return res.sendStatus(401);
 
